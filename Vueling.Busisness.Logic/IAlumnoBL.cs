@@ -9,6 +9,7 @@ namespace Vueling.Busisness.Logic
 {
     public interface IAlumnobL
     {
-        Alumno Add(Alumno alumno);
+        Alumno Add(Alumno alumno, string format);
     }
+
 }

@@ -51,6 +51,7 @@
             this.buttontxt.TabIndex = 0;
             this.buttontxt.Text = "txt";
             this.buttontxt.UseVisualStyleBackColor = true;
+            this.buttontxt.Click += new System.EventHandler(this.buttontxt_Click);
             // 
             // buttonjson
             // 
@@ -60,6 +61,7 @@
             this.buttonjson.TabIndex = 1;
             this.buttonjson.Text = "json";
             this.buttonjson.UseVisualStyleBackColor = true;
+            this.buttonjson.Click += new System.EventHandler(this.buttonjson_Click);
             // 
             // buttonxml
             // 
@@ -69,7 +71,7 @@
             this.buttonxml.TabIndex = 2;
             this.buttonxml.Text = "xml";
             this.buttonxml.UseVisualStyleBackColor = true;
-            this.buttonxml.Click += new System.EventHandler(this.button3_Click);
+            this.buttonxml.Click += new System.EventHandler(this.buttonxml_Click);
             // 
             // boxid
             // 
@@ -105,7 +107,6 @@
             this.boxdni.Name = "boxdni";
             this.boxdni.Size = new System.Drawing.Size(100, 20);
             this.boxdni.TabIndex = 7;
-            this.boxdni.TextChanged += new System.EventHandler(this.boxdni_TextChanged);
             // 
             // textdni
             // 

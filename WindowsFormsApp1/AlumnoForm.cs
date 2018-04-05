@@ -26,21 +26,34 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             alumno = new Alumno ();
-            alumnoBl = new IAlumnobL;
+            alumnoBl = new AlumnoBl();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void LoaddatosForm(string format)
         {
-
+            alumno.IdAlumno = Convert.ToInt32(boxdni.Text);
+            alumno.Nombre = boxnombre.Text;
+            alumno.Apellidos = boxapellido.Text;
+            alumno.Dni = boxdni.Text;
+            alumno.FechadeNacimiento = Convert.ToDateTime(boxfecha.Text);
+            alumnoBl.Add(alumno, format);
         }
 
-        private void boxdni_TextChanged(object sender, EventArgs e)
+        private void buttontxt_Click(object sender, EventArgs e)
         {
-
+            LoaddatosForm("txt");
         }
 
-        private void LoadAlumnoData();
-        Alumno.IdAlumno = convert.ToInt32()
+        private void buttonjson_Click(object sender, EventArgs e)
+        {
+            LoaddatosForm("json");
+          
+        }
 
+        private void buttonxml_Click(object sender, EventArgs e)
+        {
+            LoaddatosForm("xml");
+
+        }
     }
 }
