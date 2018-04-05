@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnoDao.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="AlumnoJsonDao.cs" />
+    <Compile Include="AlumnoTxtDao.cs" />
+    <Compile Include="AlumnoXmlDao.cs" />
     <Compile Include="IAlumnoDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

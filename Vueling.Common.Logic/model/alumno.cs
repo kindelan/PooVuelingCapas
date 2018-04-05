@@ -34,9 +34,9 @@ namespace Vueling.Common.Logic.model
             
         }
 
-        public void calculoEdad(DateTime fechaNacimiento)
+        public void calculoEdad()
         {
-            Edad = DateTime.Now.Year - fechaNacimiento.Year;
+            Edad = DateTime.Now.Year - FechadeNacimiento.Year;
         }
 
         public void horaRegistro()

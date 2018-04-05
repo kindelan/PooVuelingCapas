@@ -7,9 +7,9 @@ using Vueling.Common.Logic.model;
 
 namespace Vueling.DataAccess.Dao
 {
-    public class AlumnoDao : IAlumnoDao
+    public class AlumnoXmlDao : IAlumnoDao
     {
-        public AlumnoDao Add(Alumno Alumno)
+        public Alumno Add(Alumno alumno)
         {
             throw new NotImplementedException();
         }
