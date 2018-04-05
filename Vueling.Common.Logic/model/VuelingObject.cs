@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Vueling.Common.Logic.model
 {
-    public class VuelingObject
+    public interface VuelingObject
     {
+         string Guid
+        {
+            get;
+            set;
+        }
     }
 }

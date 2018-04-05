@@ -9,23 +9,67 @@ namespace Vueling.Common.Logic.model
      public class Alumno : VuelingObject
     {
         //Atributos (atributos privados)
-        private string Nombre;
-        private int IdAlumno;
+        public string Nombre { set; get; }
+        public string Apellidos { set; get; }
+        public int IdAlumno { set; get; }
+        public DateTime FechadeNacimiento { set; get; }
+        public string Dni { set; get; }
+        public int Edad { set; get; }
+        public DateTime FechadeCreacion { set; get; }
+        public string Guid { set; get; }
 
-      
-
-        //propiedades (propiedades publicas y mayuscula)
-
-        public int IdAlumnos { get => IdAlumnos; set => IdAlumnos = value; }
-
-        public string GetNombre()
+        public Alumno()
         {
-            return GetNombre();
         }
 
-        public void SetNombre(string value)
+        public Alumno(string nombre, string apellidos, int idAlumno, DateTime fechadeNacimiento, string dni)
         {
-            SetNombre(value);
+            Nombre = nombre;
+            Apellidos = apellidos;
+            IdAlumno = idAlumno;
+            FechadeNacimiento = fechadeNacimiento;
+            Dni = dni;
+            Guid = System.Guid.NewGuid().ToString();
+           
+            
+        }
+
+        public void calculoEdad(DateTime fechaNacimiento)
+        {
+            Edad = DateTime.Now.Year - fechaNacimiento.Year;
+        }
+
+        public void horaRegistro()
+        {
+            FechadeCreacion = DateTime.Now;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var alumno = obj as Alumno;
+            return alumno != null &&
+                   Nombre == alumno.Nombre &&
+                   Apellidos == alumno.Apellidos &&
+                   IdAlumno == alumno.IdAlumno &&
+                   FechadeNacimiento == alumno.FechadeNacimiento &&
+                   Dni == alumno.Dni &&
+                   Edad == alumno.Edad &&
+                   FechadeCreacion == alumno.FechadeCreacion &&
+                   Guid == alumno.Guid;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 1122968978;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Nombre);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Apellidos);
+            hashCode = hashCode * -1521134295 + IdAlumno.GetHashCode();
+            hashCode = hashCode * -1521134295 + FechadeNacimiento.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Dni);
+            hashCode = hashCode * -1521134295 + Edad.GetHashCode();
+            hashCode = hashCode * -1521134295 + FechadeCreacion.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Guid);
+            return hashCode;
         }
     }
 }
