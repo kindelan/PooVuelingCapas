@@ -29,7 +29,13 @@ namespace Vueling.Common.Logic.model
             IdAlumno = idAlumno;
             FechadeNacimiento = fechadeNacimiento;
             Dni = dni;
-            Guid = System.Guid.NewGuid().ToString();
+        }
+
+        public Alumno(string nombre, string apellidos, int idAlumno, DateTime fechadeNacimiento, string dni, int edad, DateTime fechadeCreacion, string guid) : this(nombre, apellidos, idAlumno, fechadeNacimiento, dni)
+        {
+            Edad = edad;
+            FechadeCreacion = fechadeCreacion;
+            Guid = guid;
         }
 
         public void calculoEdad()
@@ -47,6 +53,12 @@ namespace Vueling.Common.Logic.model
             Guid = System.Guid.NewGuid().ToString();
         }
 
+
+        public override string ToString()
+        {
+            return string.Format("{0};{1};{2};{3};{4};{5};{6};{7};", Nombre, Apellidos, IdAlumno, FechadeNacimiento, Dni, Edad, FechadeCreacion, Guid);
+        }
+
         public override bool Equals(object obj)
         {
             var alumno = obj as Alumno;
@@ -57,7 +69,7 @@ namespace Vueling.Common.Logic.model
                    FechadeNacimiento == alumno.FechadeNacimiento &&
                    Dni == alumno.Dni &&
                    Edad == alumno.Edad &&
-                   FechadeCreacion == alumno.FechadeCreacion &&
+                   FechadeCreacion.Date == alumno.FechadeCreacion &&
                    Guid == alumno.Guid;
         }
 
@@ -70,14 +82,9 @@ namespace Vueling.Common.Logic.model
             hashCode = hashCode * -1521134295 + FechadeNacimiento.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Dni);
             hashCode = hashCode * -1521134295 + Edad.GetHashCode();
-            hashCode = hashCode * -1521134295 + FechadeCreacion.GetHashCode();
+
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Guid);
             return hashCode;
-        }
-
-        public override string ToString()
-        {
-            return string.Format("{0};{1};{2};{3};{4};{5};{6};{7};", IdAlumno, Nombre,Apellidos,Dni,Guid,Edad,FechadeCreacion,FechadeNacimiento);
         }
     }
 }

@@ -66,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Vueling.Common.Logic\Vueling.Common.Logic.csproj">
+      <Project>{CD2BE616-224A-4605-A62F-4F423675DF3E}</Project>
+      <Name>Vueling.Common.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Vueling.DataAccess.Dao\Vueling.DataAccess.Dao.csproj">
       <Project>{004C345C-6A1A-49C1-9D3B-A8B82B7DB9EA}</Project>
       <Name>Vueling.DataAccess.Dao</Name>
