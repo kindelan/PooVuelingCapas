@@ -41,9 +41,5 @@ namespace Vueling.Busisness.Logic
             return al;
         }
 
-
-
-
-
     }
 }

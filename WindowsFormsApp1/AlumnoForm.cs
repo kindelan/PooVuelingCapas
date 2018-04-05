@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             alumno.Apellidos = boxapellido.Text;
             alumno.Dni = boxdni.Text;
             alumno.FechadeNacimiento = Convert.ToDateTime(boxfecha.Text);
+            alumno.SetGuid();
             alumnoBl.Add(alumno, format);
         }
 

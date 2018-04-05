@@ -11,10 +11,24 @@ namespace Vueling.DataAccess.Dao.Tests
     [TestClass()]
     public class AlumnoDaoTests
     {
-        [TestMethod()]
+
+        [TestInitialize]
+        public void testInit()
+        {
+            
+        }
+
+        [DataRow(1, "dd", "dd", "dd", "10-03-1988")]
+        [DataTestMethod]
         public void AddTest()
         {
             Assert.Fail();
+        }
+
+        [TestCleanup]
+        public void testClean()
+        {
+            //
         }
     }
 }
