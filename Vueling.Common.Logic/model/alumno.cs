@@ -69,7 +69,7 @@ namespace Vueling.Common.Logic.model
                    FechadeNacimiento == alumno.FechadeNacimiento &&
                    Dni == alumno.Dni &&
                    Edad == alumno.Edad &&
-                   FechadeCreacion.Date == alumno.FechadeCreacion &&
+                   FechadeCreacion.Date == alumno.FechadeCreacion.Date &&
                    Guid == alumno.Guid;
         }
 
